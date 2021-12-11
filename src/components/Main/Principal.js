@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import { Alert, Image, StyleSheet, TouchableHighlight, View } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Actions } from 'react-native-router-flux';
 
 const logo = require('../../imgs/logo.png')
@@ -15,26 +16,27 @@ export default class Principal extends Component {
           <View style={ styles.apresenta}>
             <Image source={ logo } />
             
-            <TouchableHighlight
+            <TouchableOpacity
+              activeOpacity={0.2}
               onPress={ () => { Actions.resultado()}}
             >
               <Image source={ btnJogar } />
-            </TouchableHighlight>
+            </TouchableOpacity>
 
           </View>
           
           <View style={ styles.rodape}>
-            <TouchableHighlight
+            <TouchableOpacity
               onPress={ () => { Actions.outros()}}
             >
               <Image source={ outrosJogos } />
-            </TouchableHighlight>
+            </TouchableOpacity>
 
-            <TouchableHighlight
+            <TouchableOpacity
               onPress={ () => { Actions.sobre()}}
             >
               <Image source={ sobreJogo } />
-            </TouchableHighlight>
+            </TouchableOpacity>
           </View>
         </View>
       )
